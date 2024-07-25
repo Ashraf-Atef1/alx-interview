@@ -2,7 +2,6 @@
 """
 0-pascal_triangle
 """
-from math import ceil
 
 
 def pascal_triangle(n):
