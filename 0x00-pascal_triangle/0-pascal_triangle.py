@@ -9,7 +9,7 @@ def pascal_triangle(n):
     Returns a list of lists of integers representing the Pascal’s triangle of n
     """
     triangle = []
-    if not isinstance(n, int) or n <= 0:
+    if type(n) is not int or n <= 0:
         return triangle
     for line in range(1, n + 1):
         row = []
