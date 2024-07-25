@@ -2,6 +2,7 @@
 """
 0-pascal_triangle
 """
+from math import ceil
 
 
 def pascal_triangle(n):
@@ -11,11 +12,12 @@ def pascal_triangle(n):
     triangle = []
     if not isinstance(n, int) or n <= 0:
         return triangle
-    for line in range(1, n + 1):
-        row = []
-        counter = 1
-        for i in range(1, line + 1):
-            row.append(counter)
-            counter = round(counter * (line - i) / i)
-        triangle.append(row)
+    for i in range(n):
+        line = []
+        for j in range(i + 1):
+            if j == 0 or j == i:
+                line.append(1)
+            elif i > 0 and j > 0:
+                line.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
+        triangle.append(line)
     return triangle
