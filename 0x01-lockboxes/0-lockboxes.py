@@ -1,14 +1,18 @@
 #!/usr/bin/python3
-'''This module contains a function that checks if all the boxes can be opened'''
+'''This module contains a function that checks
+if all the boxes can be opened'''
+
 
 def open_box(boxes, number, numbers_list):
-    '''This function opens the boxes and checks if all the boxes can be opened'''
-    if number < 0 or number >= len(boxes):
+    '''This function opens the boxes and checks
+    if all the boxes can be opened'''
+    if number < 0 or number >= len(boxes) and not isinstance(number, int):
         return
     numbers_list.add(number)
     for current_number in boxes[number]:
-        if current_number not in numbers_list and isinstance(current_number, int):
+        if current_number not in numbers_list:
             open_box(boxes, current_number, numbers_list)
+
 
 def canUnlockAll(boxes):
     '''This function checks if all the boxes can be opened'''
