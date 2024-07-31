@@ -18,7 +18,7 @@ def canUnlockAll(boxes):
     '''This function checks if all the boxes can be opened'''
     numbers_list = set()
     if len(boxes) == 0:
-        return False
+        return True
     open_box(boxes, 0, numbers_list)
     if len(numbers_list) == len(boxes):
         return True
