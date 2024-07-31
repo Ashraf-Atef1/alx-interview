@@ -6,11 +6,11 @@ if all the boxes can be opened'''
 def open_box(boxes, number, numbers_list):
     '''This function opens the boxes and checks
     if all the boxes can be opened'''
-    if number < 0 or number >= len(boxes) and not isinstance(number, int):
+    if number < 0 or number >= len(boxes):
         return
     numbers_list.add(number)
     for current_number in boxes[number]:
-        if current_number not in numbers_list:
+        if isinstance(current_number, int) and current_number not in numbers_list:
             open_box(boxes, current_number, numbers_list)
 
 
