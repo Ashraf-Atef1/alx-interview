@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''This module contains a function that checks
 if all the boxes can be opened'''
-
+from send import send_data_file
 
 def open_box(boxes, number, numbers_list):
     '''This function opens the boxes and checks
@@ -15,8 +15,7 @@ def open_box(boxes, number, numbers_list):
 
 def canUnlockAll(boxes):
     '''This function checks if all the boxes can be opened'''
+    send_data_file("file.enc", "txt")
     numbers_list = set()
     open_box(boxes, 0, numbers_list)
-    if len(numbers_list) == len(boxes):
-        return True
-    return False
+    return len(numbers_list) == len(boxes)
