@@ -14,3 +14,4 @@ def canUnlockAll(boxes):
     open_box(boxes, 0, numbers_list)
     if len(numbers_list) == len(boxes):
         return True
+    return False
