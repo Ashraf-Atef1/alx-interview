@@ -7,7 +7,7 @@ def open_box(boxes, number, numbers_list):
         return
     numbers_list.add(number)
     for current_number in boxes[number]:
-        if current_number not in numbers_list:
+        if current_number not in numbers_list and isinstance(current_number, int):
             open_box(boxes, current_number, numbers_list)
 
 def canUnlockAll(boxes):
